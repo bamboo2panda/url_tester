@@ -1,1 +1,4 @@
 .env
+dbdump
+__pycache__
+url_tester/__pycache__
