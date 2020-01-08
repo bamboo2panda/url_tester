@@ -4,7 +4,7 @@ from django.utils.translation import ugettext_lazy as _
 
 class Scan(models.Model):
     title = models.CharField(_('title'), max_length=128)
-    created_at  = models.DateTimeField(_('created at'), auto_now_add=True)
+    created_at = models.DateTimeField(_('created at'), auto_now_add=True)
     announce_text = models.TextField(_('announce'), max_length=512, blank=True)
     text = models.TextField(_('text'), max_length=4096)
 
@@ -17,5 +17,5 @@ class Scan(models.Model):
 
     class Meta:
         ordering = ['-created_at']
-        verbose_name = _('article')
-        verbose_name_plural = _('articles')
+        verbose_name = _('scan')
+        verbose_name_plural = _('scans')
