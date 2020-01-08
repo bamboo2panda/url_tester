@@ -1,5 +1,11 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from rest_framework import viewsets
+from .serializers import *
 
-def index(request):
-    return HttpResponse('Hello World!')
+
+class ScanViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Scan.objects.all()
+
+    def get_serializer_class(self):
+        if self.action == 'list':
+            return ScanPreviewSerializer
+        return ScanDetailSerializer
